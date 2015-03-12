@@ -1,0 +1,28 @@
+Tex\Bundle\CotacaoBundle\Entity\Condutor:
+    type: entity
+    repositoryClass: Tex\Bundle\CotacaoBundle\Entity\CondutorRepository
+    table: condutor
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nome:
+            type: string
+            length: 255
+        sexo:
+            type: string
+            length: 255
+        nascimento:
+            type: date
+
+    manyToOne:
+        cotacao:
+            targetEntity: Cotacao
+            inversedBy: condutors
+            joinColumn:
+                name: cotacao_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

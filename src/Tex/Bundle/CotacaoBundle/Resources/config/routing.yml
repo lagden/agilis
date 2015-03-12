@@ -1,0 +1,7 @@
+cotacao_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: CotacaoBundle:Default:index }
+
+cotacao_cria:
+    pattern:  /cria
+    defaults: { _controller: CotacaoBundle:Default:createCotacao }

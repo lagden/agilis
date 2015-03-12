@@ -1,0 +1,4 @@
+cotacao:
+    resource: "@CotacaoBundle/Resources/config/routing.yml"
+    prefix:   /
+

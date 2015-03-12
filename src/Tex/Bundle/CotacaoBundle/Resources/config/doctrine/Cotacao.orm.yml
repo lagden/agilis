@@ -1,0 +1,47 @@
+Tex\Bundle\CotacaoBundle\Entity\Cotacao:
+    type: entity
+    repositoryClass: Tex\Bundle\CotacaoBundle\Entity\CotacaoRepository
+    table: cotacao
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        facebook:
+            type: string
+            length: 255
+            nullable: TRUE
+        email:
+            type: string
+            length: 255
+            nullable: TRUE
+        termoOk:
+            type: boolean
+            column: termo_ok
+            nullable: TRUE
+        token:
+            type: string
+            length: 255
+            nullable: TRUE
+        codCar:
+            type: integer
+            column: cod_car
+            nullable: TRUE
+        descricaoCar:
+            type: string
+            length: 255
+            column: descricao_car
+            nullable: TRUE
+        isMoto:
+            type: boolean
+            column: is_moto
+            nullable: TRUE
+    oneToMany:
+        condutors:
+            targetEntity: Condutor
+            mappedBy: cotacao
+    lifecycleCallbacks:
+        prePersist: [ doStuffOnPrePersist, doOtherStuffOnPrePersistToo ]
+        postPersist: [ doStuffOnPostPersist ]
